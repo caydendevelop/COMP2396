@@ -1,0 +1,465 @@
+Question 1:
+
+
+
+Test 1 (16%):
+
+BMI b1 = new BMI("Ken", 18, 72, 150);
+
+Expected output: "The BMI for Ken is 20.34 normal weight"
+
+
+
+Test 2 (16%):
+
+BMI b2 = new BMI("Dan", 70, 240);
+
+Expected output: "The BMI for Dan is 34.44 seriously over weight"
+
+
+
+Test 3 (17%):
+
+BMI b3 = new BMI("Austin", 60, 330);
+
+Expected output: "The BMI for Austin is 64.45 gravely over weight"
+
+
+
+Test 4 (17%):
+
+BMI b4 = new BMI("Carol", 55, 120);
+
+Expected output: "The BMI for Carol is 27.89 over weight"
+
+
+
+Test 5 (17%):
+
+BMI b5 = new BMI("Sunny", 59, 80);
+
+Expected output: "The BMI for Sunny is 16.16 underweight"
+
+
+
+
+
+Test 6 (17%): 
+
+BMI b6 = new BMI("Bunny", 59, 70);
+
+Expected output: "The BMI for Bunny is 14.14 seriously underweight"
+
+
+
+
+
+
+
+Question 2:
+
+
+
+Test 1 (8%):
+
+Guest wing = new Guest("Wing");
+
+Guest joy = new Guest("Joy");
+
+Guest marco = new Guest("Marco");
+
+Event bookFair = new Event("Book Fair");
+
+bookFair.addVenue("Hall A");
+
+bookFair.addVenue("Room 1");
+
+wing.joinEvent(bookFair, "Hall A");
+
+joy.joinEvent(bookFair, "Room 1");
+
+marco.joinEvent(bookFair, "Room 1");
+
+wing.hasCloseContactWith(joy) --> false
+
+
+
+Test 2 (8%):
+
+Guest wing = new Guest("Wing");
+
+Guest joy = new Guest("Joy");
+
+Guest marco = new Guest("Marco");
+
+Event bookFair = new Event("Book Fair");
+
+bookFair.addVenue("Hall A");
+
+bookFair.addVenue("Room 1");
+
+wing.joinEvent(bookFair, "Hall A");
+
+joy.joinEvent(bookFair, "Room 1");
+
+marco.joinEvent(bookFair, "Room 1");
+
+wing.hasCloseContactWith(marco) --> false
+
+
+
+Test 3 (8%):
+
+Guest wing = new Guest("Wing");
+
+Guest joy = new Guest("Joy");
+
+Guest marco = new Guest("Marco");
+
+Event bookFair = new Event("Book Fair");
+
+bookFair.addVenue("Hall A");
+
+bookFair.addVenue("Room 1");
+
+wing.joinEvent(bookFair, "Hall A");
+
+joy.joinEvent(bookFair, "Room 1");
+
+marco.joinEvent(bookFair, "Room 1");
+
+joy.hasCloseContactWith(marco) --> true
+
+
+
+Test 4 (8%):
+
+// Two guests in the same venue but different event
+
+Guest wing = new Guest("Wing");
+
+Guest joy = new Guest("Joy");
+
+Guest marco = new Guest("Marco");
+
+Event bookFair = new Event("Book Fair");
+
+bookFair.addVenue("Hall A");
+
+bookFair.addVenue("Room 1");
+
+wing.joinEvent(bookFair, "Hall A");
+
+joy.joinEvent(bookFair, "Room 1");
+
+marco.joinEvent(bookFair, "Room 1");
+
+Event gunplaExpo = new Event("Gunpla Expo");
+
+gunplaExpo.addVenue("Room 1");
+
+wing.joinEvent(gunplaExpo, "Room 1");
+
+wing.hasCloseContactWith(joy) --> false
+
+
+
+Test 5 (8%):
+
+Guest wing = new Guest("Wing");
+
+Guest joy = new Guest("Joy");
+
+Guest marco = new Guest("Marco");
+
+Event bookFair = new Event("Book Fair");
+
+bookFair.addVenue("Hall A");
+
+bookFair.addVenue("Room 1");
+
+wing.joinEvent(bookFair, "Hall A");
+
+joy.joinEvent(bookFair, "Room 1");
+
+marco.joinEvent(bookFair, "Room 1");
+
+Event gunplaExpo = new Event("Gunpla Expo");
+
+gunplaExpo.addVenue("Room 1");
+
+wing.joinEvent(gunplaExpo, "Room 1");
+
+wing.hasCloseContactWith(marco) --> false
+
+
+
+Test 6 (8%):
+
+Guest wing = new Guest("Wing");
+
+Guest joy = new Guest("Joy");
+
+Guest marco = new Guest("Marco");
+
+Event bookFair = new Event("Book Fair");
+
+bookFair.addVenue("Hall A");
+
+bookFair.addVenue("Room 1");
+
+wing.joinEvent(bookFair, "Hall A");
+
+joy.joinEvent(bookFair, "Room 1");
+
+marco.joinEvent(bookFair, "Room 1");
+
+Event gunplaExpo = new Event("Gunpla Expo");
+
+gunplaExpo.addVenue("Room 1");
+
+wing.joinEvent(gunplaExpo, "Room 1");
+
+joy.hasCloseContactWith(marco) --> true
+
+
+
+Test 7 (8%):
+
+Guest wing = new Guest("Wing");
+
+Guest joy = new Guest("Joy");
+
+Guest marco = new Guest("Marco");
+
+Guest kiu = new Guest("Kiu");
+
+Event bookFair = new Event("Book Fair");
+
+bookFair.addVenue("Hall A");
+
+bookFair.addVenue("Room 1");
+
+wing.joinEvent(bookFair, "Hall A");
+
+wing.joinEvent(bookFair, "Room 1");
+
+joy.joinEvent(bookFair, "Room 1");
+
+marco.joinEvent(bookFair, "Room 1");
+
+Event gunplaExpo = new Event("Gunpla Expo");
+
+gunplaExpo.addVenue("Hall A");
+
+gunplaExpo.addVenue("Room 1");
+
+wing.joinEvent(gunplaExpo, "Room 1");
+
+wing.joinEvent(gunplaExpo, "Hall A");
+
+kiu.joinEvent(gunplaExpo, "Hall A");
+
+wing.hasCloseContactWith(joy) --> true
+
+
+
+Test 8 (8%):
+
+Guest wing = new Guest("Wing");
+
+Guest joy = new Guest("Joy");
+
+Guest marco = new Guest("Marco");
+
+Guest kiu = new Guest("Kiu");
+
+Event bookFair = new Event("Book Fair");
+
+bookFair.addVenue("Hall A");
+
+bookFair.addVenue("Room 1");
+
+wing.joinEvent(bookFair, "Hall A");
+
+wing.joinEvent(bookFair, "Room 1");
+
+joy.joinEvent(bookFair, "Room 1");
+
+marco.joinEvent(bookFair, "Room 1");
+
+Event gunplaExpo = new Event("Gunpla Expo");
+
+gunplaExpo.addVenue("Hall A");
+
+gunplaExpo.addVenue("Room 1");
+
+wing.joinEvent(gunplaExpo, "Room 1");
+
+wing.joinEvent(gunplaExpo, "Hall A");
+
+kiu.joinEvent(gunplaExpo, "Hall A");
+
+wing.hasCloseContactWith(marco) --> true
+
+
+
+Test 9 (9%):
+
+Guest wing = new Guest("Wing");
+
+Guest joy = new Guest("Joy");
+
+Guest marco = new Guest("Marco");
+
+Guest kiu = new Guest("Kiu");
+
+Event bookFair = new Event("Book Fair");
+
+bookFair.addVenue("Hall A");
+
+bookFair.addVenue("Room 1");
+
+wing.joinEvent(bookFair, "Hall A");
+
+wing.joinEvent(bookFair, "Room 1");
+
+joy.joinEvent(bookFair, "Room 1");
+
+marco.joinEvent(bookFair, "Room 1");
+
+Event gunplaExpo = new Event("Gunpla Expo");
+
+gunplaExpo.addVenue("Hall A");
+
+gunplaExpo.addVenue("Room 1");
+
+wing.joinEvent(gunplaExpo, "Room 1");
+
+wing.joinEvent(gunplaExpo, "Hall A");
+
+kiu.joinEvent(gunplaExpo, "Hall A");
+
+wing.hasCloseContactWith(kiu) --> true
+
+
+
+Test 10 (9%):
+
+Guest wing = new Guest("Wing");
+
+Guest joy = new Guest("Joy");
+
+Guest marco = new Guest("Marco");
+
+Guest kiu = new Guest("Kiu");
+
+Event bookFair = new Event("Book Fair");
+
+bookFair.addVenue("Hall A");
+
+bookFair.addVenue("Room 1");
+
+wing.joinEvent(bookFair, "Hall A");
+
+wing.joinEvent(bookFair, "Room 1");
+
+joy.joinEvent(bookFair, "Room 1");
+
+marco.joinEvent(bookFair, "Room 1");
+
+Event gunplaExpo = new Event("Gunpla Expo");
+
+gunplaExpo.addVenue("Hall A");
+
+gunplaExpo.addVenue("Room 1");
+
+wing.joinEvent(gunplaExpo, "Room 1");
+
+wing.joinEvent(gunplaExpo, "Hall A");
+
+kiu.joinEvent(gunplaExpo, "Hall A");
+
+joy.hasCloseContactWith(marco) --> true
+
+
+
+Test 11 (9%):
+
+Guest wing = new Guest("Wing");
+
+Guest joy = new Guest("Joy");
+
+Guest marco = new Guest("Marco");
+
+Guest kiu = new Guest("Kiu");
+
+Event bookFair = new Event("Book Fair");
+
+bookFair.addVenue("Hall A");
+
+bookFair.addVenue("Room 1");
+
+wing.joinEvent(bookFair, "Hall A");
+
+wing.joinEvent(bookFair, "Room 1");
+
+joy.joinEvent(bookFair, "Room 1");
+
+marco.joinEvent(bookFair, "Room 1");
+
+Event gunplaExpo = new Event("Gunpla Expo");
+
+gunplaExpo.addVenue("Hall A");
+
+gunplaExpo.addVenue("Room 1");
+
+wing.joinEvent(gunplaExpo, "Room 1");
+
+wing.joinEvent(gunplaExpo, "Hall A");
+
+kiu.joinEvent(gunplaExpo, "Hall A");
+
+joy.hasCloseContactWith(kiu) --> true
+
+
+
+Test 12 (9%):
+
+Guest wing = new Guest("Wing");
+
+Guest joy = new Guest("Joy");
+
+Guest marco = new Guest("Marco");
+
+Guest kiu = new Guest("Kiu");
+
+Event bookFair = new Event("Book Fair");
+
+bookFair.addVenue("Hall A");
+
+bookFair.addVenue("Room 1");
+
+wing.joinEvent(bookFair, "Hall A");
+
+wing.joinEvent(bookFair, "Room 1");
+
+joy.joinEvent(bookFair, "Room 1");
+
+marco.joinEvent(bookFair, "Room 1");
+
+Event gunplaExpo = new Event("Gunpla Expo");
+
+gunplaExpo.addVenue("Hall A");
+
+gunplaExpo.addVenue("Room 1");
+
+wing.joinEvent(gunplaExpo, "Room 1");
+
+wing.joinEvent(gunplaExpo, "Hall A");
+
+kiu.joinEvent(gunplaExpo, "Hall A");
+
+marco.hasCloseContactWith(kiu) --> false
+
+Last modified: Wednesday, 14 April 2021, 5:07 PM

@@ -1,0 +1,46 @@
+Question 1:
+
+public class UseBMIClass {
+	public static void main (String []args) {
+		BMI b1= new BMI ("Ken", 18, 72, 150);
+		System.out.println("The BMI for " + b1.getName() + " is " +
+				+ b1.getBMI() + " "+ b1.getStatus());
+        BMI b2= new BMI ("Dan", 70, 240);
+        System.out.println("The BMI for " + b2.getName() + " is " +
+        		+ b2.getBMI() + " "+ b2.getStatus());
+	}
+}
+
+
+
+Question 2:
+
+public class Main {
+
+	public static void main(String[] args) {
+		Guest wing = new Guest("Wing");
+		Guest joy = new Guest("Joy");
+		Guest marco = new Guest("Marco");
+
+		Event bookFair = new Event("Book Fair");
+		bookFair.addVenue("Hall A");
+		bookFair.addVenue("Room 1");
+		
+		wing.joinEvent(bookFair, "Hall A");
+		joy.joinEvent(bookFair, "Room 1");
+		marco.joinEvent(bookFair, "Room 1");
+
+		Event gunplaExpo = new Event("Gunpla Expo");
+		gunplaExpo.addVenue("Room 1");
+		wing.joinEvent(gunplaExpo, "Room 1");
+		
+		System.out.println(wing.hasCloseContactWith(joy)); //output: false
+		System.out.println(wing.hasCloseContactWith(marco)); //output: false
+		System.out.println(joy.hasCloseContactWith(marco)); //output: true
+	}
+
+}
+
+
+
+
